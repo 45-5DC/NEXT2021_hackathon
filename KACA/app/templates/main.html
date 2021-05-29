@@ -31,9 +31,9 @@
         {% if forloop.counter < 5 %}
         <div class = "content-set">
             <div class = "box">  
-                {% if post.logo %}
+            {% if post.logo %}
                 <img src ='{{post.logo.url}}'>
-                {% endif %}       
+            {% endif %}       
             </div>  
             <a href="{% url 'academy' post.pk %}">
                 {{post.title}}</a>
@@ -49,8 +49,6 @@
         <p class = "all"><a href = "{% url 'lecture_main' %}">전체보기</a></p>
     </div>
     <div class = "lecture-content">
-        
-
         {% for lecture in lectures %}
         
         {% if forloop.counter < 5 %}
