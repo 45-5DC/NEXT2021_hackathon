@@ -46,7 +46,9 @@ def logout(request):
 
     return redirect('main')
 
+@login_required
 def mypage(request):
+
 
     return render(request, 'mypage.html')
 
