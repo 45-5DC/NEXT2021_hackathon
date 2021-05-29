@@ -56,7 +56,7 @@ body {
     border: 1px #000000 solid;
     height: 170px;
     width: 300px;
-    background-image: url("https://cdn.pixabay.com/photo/2020/04/06/13/37/coffee-5009730_960_720.png");
+    
     background-size: contain;
     background-position: center;
 }

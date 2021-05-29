@@ -96,12 +96,12 @@ def lecture_form(request):
             introduction = request.POST['introduction'],
             price = request.POST['price'],
             construct = request.POST['construct'],
-            category = request.POST.get('category'),
+            category = request.POST['category'],
             thumbnail = request.POST['thumbnail'],
             content = request.POST['content'],
             author = request.user
         )
-        return redirect('lecture_detail', new_lecture.pk)
+        return redirect('lecture_main') ##이거 고쳐야됨##
 
     return render(request, 'lecture_form.html')
 

@@ -29,8 +29,8 @@ class Lecture(models.Model):
     price = models.CharField(max_length=200, default=None)
     construct = models.CharField(max_length=200, default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lectures', null=True, default=None)
-    category = models.CharField(max_length=10, default=None)
-
+    category = models.CharField(max_length=200, default=None)
+    
     def __str__(self):
         return self.title
 
