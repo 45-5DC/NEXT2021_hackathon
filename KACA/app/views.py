@@ -78,3 +78,13 @@ def lecture_detail(request, lecture_pk):
         return redirect('lecture_detail', lecture_pk)
 
     return render(request, 'lecture_detail.html')
+
+
+def academy_form(request):
+    
+    return render(request, 'Academy_Form.html')
+
+
+def lecture_form(request):
+    
+    return render(request, 'Lecture_Form.html')
