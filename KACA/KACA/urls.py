@@ -39,4 +39,5 @@ urlpatterns = [
     path('academy_form/', views.academy_form, name='academy_form'),    
     path('lecture_form/', views.lecture_form, name='lecture_form'),    
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
+    path('scrap/', views.scrap, name="scrap")
 ]

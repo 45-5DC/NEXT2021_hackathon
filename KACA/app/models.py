@@ -41,4 +41,6 @@ class Lecture_comment(models.Model):
     content = models.TextField(default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lecture_comments', null=True, default=None)
 
-
+class Scrap(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="scraps")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="scraps")
