@@ -5,42 +5,61 @@
 {% endblock css %}
 
 {% block undefined %}
-<div class="academy_form">
-    <div>
-        <div class='academy_name'>학회명</div>
-        <div class='name_form'>학회명이 들어감</div>
-    </div>
-    <div>
-        <div class='short_intro'>한줄소개</div>
-        <div class='intro_form'>한줄소개가 들어감</div>
-    </div>
-    <div>
+<form method="POST">
+    {% csrf_token %}
+    <div class="academy_form">
         <div>
-            <div class='apply_start'>마감기간(시작)</div>
-            <div class='start_form'>마감기간 시작일</div>
+            <div class='academy_name'>학회명</div>
+            <div class='name_form'>
+                <input type="text" id="title" name="title">
+            </div>
         </div>
         <div>
-            <div class='apply_end'>마감기간(끝)</div>
-            <div class='end_form'>마감기간 마감일</div>
+            <div class='short_intro'>한줄소개</div>
+            <input type="text" id="introduction" name="introduction">
+            <div class='intro_form'>한줄소개가 들어감</div>
         </div>
+        <div>
+            <div>
+                <div class='start_form'>마감기간(시작)</div>
+                <input type="date" id="apply_start" name="apply_start">
+            </div>
+        </div>
+        <div>
+            <div class='end_form'>마감기간(끝)</div>
+            <input type="date" id="apply_end" name="apply_end">
+        </div>
+    </div>
     </div>
     <div>
         <div class='academy_category'>학회분류</div>
+        <select>
+            <option value="business">경영</option>
+            <option value="economics">경제</option>
+            <option value="humanities">인문</option>
+            <option value="law">법</option>
+            <option value="coding">코딩</option>
+            <option value="lifescience">생명과학</option>
+            <option value="environenginner">환경공학</option>
+        </select>
         <div class='category_form'>분류</div>
     </div>
     <div>
         <div class='applicant'>모집대상</div>
-        <div class='applicant_form'>모집대상이 들어감</div>
+        <input type="text" id="target" name="target">
+    </div>
     </div>
     <div>
         <div class='academy_pic'>학회이미지</div>
-        <div class='pic_form'>학회이미지가 들어감</div>
+        <input type="file" id="logo" name="logo">
     </div>
     <div>
         <div class='academy_description'>학회소개글</div>
+        <input type="content" id="content" name="content" row="30" cols="50">
         <div class='description_form'>소개글이 들어감</div>
     </div>
-    <div class= 'submission'>제출</div>
-</div>
+        <button class="button" type="submit">제출</button>
+    </div>
+</form>
 
 {% endblock undefined %}
