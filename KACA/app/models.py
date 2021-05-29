@@ -16,10 +16,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments', default=None)
+class Post_comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='post_comments', default=None)
     content = models.TextField(default=None)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments', null=True, default=None)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_comments', null=True, default=None)
 
 class Lecture(models.Model):
     title = models.CharField(max_length=200, default=None)
@@ -33,3 +33,8 @@ class Lecture(models.Model):
 
     def __str__(self):
         return self.title
+
+class Lecture_comment(models.Model):
+    lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE, related_name='lecture_comments', default=None)
+    content = models.TextField(default=None)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lecture_comments', null=True, default=None)
