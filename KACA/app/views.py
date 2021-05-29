@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Post, Post_comment, Lecture, Lecture_comment
+from .models import Post, Post_comment, Lecture, Lecture_comment, Scrap
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+import json
 
 # Create your views here.
 def main(request):
@@ -181,3 +184,33 @@ def lecture_delete(request, lecture_pk):
     lecture = Lecture.objects.get(pk=lecture_pk)
     lecture.delete()
     return redirect('main')
+
+@csrf_exempt
+def scrap(request):
+    if request.method == "POST":
+        request_body = json.loads(request.body)
+        post_pk = request_body['post_pk']
+
+        existing_scrap = Scrap.objects.filter(
+            post = Post.objects.get(pk=post_pk),
+            user = request.user
+        )
+
+    if existing_scrap.count() > 0:
+        existing_scrap.delete()
+
+    else:
+        Scrap.objects.create(
+            post=Post.objects.get(pk=post_pk),
+            user = request.user
+        )
+
+    post_scraps = Scrap.objects.filter(
+        post = Post.objects.get(pk=post_pk)
+    )
+
+    response = {
+        'scrap_count': post_scraps.count()
+    }
+
+    return HttpResponse(json.dumps(response))
