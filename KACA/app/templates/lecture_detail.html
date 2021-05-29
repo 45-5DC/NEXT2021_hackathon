@@ -8,7 +8,9 @@
 <div class="whole_wrapper">
     <div class="title_wrapper">
         <div class="title_image_box">
-        <img src='{{lecture.thumbnail}}'>'   
+        {% if lecture.thumbnail %}
+            <img src ='{{lecture.thumbnail.url}}'>
+        {% endif %}  
         </div>
 
         <div class="title_intro_box">
@@ -65,13 +67,13 @@
                 {% endif %}
                 </div>
 
-                {% for comment in lecture.comments.all %}
-                <div class="comment"> {{comment.content}}
-                    {% if user.is_authenticated and comment.author.pk == user.pk %}
-                    <a href="{% url 'delete_comment' lecture.pk comment.pk %}">삭제</a>
+                {% for lecture_comment in lecture.lecture_comments.all %}
+                <div class="comment"> {{lecture_comment.content}}
+                    {% if user.is_authenticated and lecture_comment.author.pk == user.pk %}
+                    <a href="{% url 'delete_lecture_comment' lecture.pk lecture_comment.pk %}">삭제</a>
                     {% endif %}
                 </div>
-                {% endfor %} 
+                {% endfor %}
                 
             </div>
 
@@ -81,4 +83,4 @@
     </div>
 </div>
 
-{% endblock  %}
+{% endblock %}

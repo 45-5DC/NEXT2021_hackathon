@@ -93,7 +93,6 @@ def lecture_detail(request, lecture_pk):
             author = request.user
         )
         return redirect('lecture_detail', lecture_pk)
-
     return render(request, 'lecture_detail.html' , {'lecture': lecture} )
 
 def delete_lecture_comment(request, lecture_pk, lecture_comment_pk):
@@ -154,7 +153,7 @@ def lecture_form(request):
             content = request.POST['content'],
             author = request.user
         )
-        return redirect('lecture_main') ##이거 고쳐야됨##
+        return redirect('lecture_detail', new_lecture.pk) ##이거 고쳐야됨##
 
     return render(request, 'lecture_form.html')
 

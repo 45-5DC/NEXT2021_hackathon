@@ -9,32 +9,32 @@
     <div class='academy_intro'>
         <div class='academy_content'>
             <div class = 'academy_pic'>
-                <img src="#">학회 사진</div>
+                <img src='{{post.logo}}'>   
             <div class = 'academy_description'>
                 <div class = 'academy_profile'>
-                    <div class ='academy_title'>LikeLion</div>
-                    <div class ='academy_sorting'>학회분류: 경영,코딩</div>
+                    <div class ='academy_title'>{{post.title}} </div>
+                    <div class ='academy_sorting'>{{post.category}}</div>
                 </div>
-                <div class= 'short_description'>이 학회에서는 무엇을 배우고 무엇을 합니다</div>
-                <div class= 'applicant'>'학번무관 학년무관</div>
-                <div class='duedate'>마감기간: 2021-03-09</div>
+                <div class= 'short_description'>{{post.introduction}}</div>
+                <div class= 'applicant'>{{post.target}}</div>
+                <div class='apply_start'>{{post.apply_start}}</div>
+                <div class='apply_end'>{{post.apply_end}}</div>
             </div>
         </div>
     </div>
     <hr width="1231px">
 
     <div class='academy_post_box'>
-        <div class ='academy_post_title'>학회소개</div>
+        <div class ='academy_post_title'>{{post.title}}</div>
         <div class='academy_post'>
-            <div class='academy_post_pic'>학회사진</div>
+            <div class='academy_post_pic'><img src='{{post.logo}}'></div>
             <div class='academy_post_text'>{{ post.content }} 학회소개내용</div>
         </div>
         <div class ='academy_post_modify'>
-            <div class = 'academy_post_change'>수정</div>
-            <div class='academy_post_delete'>삭제</div>
+            <div class = 'academy_post_change'><a href="{% url 'academy_edit' post.pk %}">수정</a></div>
+            <div class= 'academy_post_delete'><a href="{% url 'academy_delete' post.pk %}">삭제</a></div>
         </div>
     </div>
-
     <div class='academy_comment_box'>
         <div class='academy_comment_title'>댓글</div>
         <div class='academy_comment'>
@@ -52,5 +52,21 @@
 
     </div>
 
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="댓글을 입력해주세요">
+        <button type="submit">댓글 쓰기</button>
+    </form>
+    {% endif %}
+    </div>
+    <div class="comment">
+    {% for comment in post.comments.all %}
+    <li>{{ comment.content }}</li>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
+        {{ user.username }}
+        <a href="{% url 'delete_academy_comment' post.comment.pk %}">삭제</a>
+        {% endif %}
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}
