@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="lecture_form">
-    <form action='' method="post">
+    <form action='' method="post" enctype='multipart/form-data'>
         {% csrf_token %}
     <div>
         <div class='lecture_name'>학회명</div>
@@ -54,8 +54,4 @@
     </form>
 </div>
 
-<<<<<<< HEAD
 {% endblock  %}
-=======
-{% endblock %}
->>>>>>> 6fedf41392ed21b108267fd70af566efaaabdd78

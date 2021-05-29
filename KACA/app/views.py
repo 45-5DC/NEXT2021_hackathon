@@ -85,7 +85,7 @@ def lecture_main(request):
 def lecture_detail(request, lecture_pk):
     lecture = Lecture.objects.get(pk=lecture_pk)
 
-    if request.method=='POST':
+    if request.method =='POST':
         content = request.POST['content']
         Lecture_comment.objects.create(
             lecture=lecture,
@@ -94,7 +94,7 @@ def lecture_detail(request, lecture_pk):
         )
         return redirect('lecture_detail', lecture_pk)
 
-    return render(request, 'lecture_detail.html') , {'lecture': lecture}
+    return render(request, 'lecture_detail.html' , {'lecture': lecture} )
 
 def delete_lecture_comment(request, lecture_pk, lecture_comment_pk):
     lecture_comment = Lecture_comment.objects.get(pk=lecture_comment_pk)
@@ -150,7 +150,7 @@ def lecture_form(request):
             price = request.POST['price'],
             construct = request.POST['construct'],
             category = request.POST['category'],
-            thumbnail = request.POST['thumbnail'],
+            thumbnail = request.FILES['thumbnail'],
             content = request.POST['content'],
             author = request.user
         )

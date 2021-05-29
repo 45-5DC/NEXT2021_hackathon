@@ -43,7 +43,10 @@
         {% for lecture in lectures %}
         <div class="content_box">
             <div class="image_box">
-                {{lecture.thumbnail}}
+                {% if lecture.thumbnail %}
+                    <img src ='{{lecture.thumbnail.url}}'>
+                {% endif %}
+               
             </div>
             <div class="detail_box_wrapper">
                 <div class="detail_box1">
