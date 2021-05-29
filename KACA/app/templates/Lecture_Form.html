@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lecture_form.css' %}">
+{% endblock css %}
+
+{% block undefined %}
+<div class="lecture_form">
+    <div>
+        <div class='lecture_name'>학회명</div>
+        <div class='name_form'>학회명이 들어감</div>
+    </div>
+    <div>
+        <div class='short_intro'>한줄소개</div>
+        <div class='intro_form'>한줄소개가 들어감</div>
+    </div>
+    <div>
+        <div>
+            <div class='lecture_price'>강의가격</div>
+            <div class='price_form'>강의가격이 들어감</div>
+        </div>
+        <div>
+            <div class='lecture_length'>강의구성</div>
+            <div class='length_form'>강의구성이들어감</div>
+        </div>
+    </div>
+    <div>
+        <div class='lecture_category'>학회분류</div>
+        <div class='category_form'>분류가 들어감</div>
+    </div>
+    <div>
+        <div class='lecture_img'>강좌이미지</div>
+        <div class='img_form'>이미지가 들어감</div>
+    </div>
+    <div>
+        <div class='lecture_description'>강좌소개글</div>
+        <div class='description_form'>소개가 들어감</div>
+    </div>
+    <div class= 'submission'>제출</div>
+</div>
+
+{% endblock undefined %}

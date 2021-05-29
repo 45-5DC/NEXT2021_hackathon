@@ -1,0 +1,136 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+* {
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.whole_wrapper {
+    padding: 98px 128px 162px 112px;
+
+    width: 1440px;
+    height: 1834px;
+}
+
+.title_wrapper {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 70px;
+    font-size: 35px;
+    line-height: 41px;
+    width: 1280px;
+}
+
+.property_catetgory {
+
+}
+
+.main_title {
+    font-size: 35px;
+    margin-bottom: 35px;
+    width: 306px;
+    height: 44px;
+}
+
+.property_box {
+    display: flex;
+    margin-bottom: 71.5px;
+}
+
+.property {
+    margin-right: 10px;
+}
+
+hr {
+    /* margin-left: 78px;
+    margin-right: 82px; */
+    width: 1280px;
+    height: 0px;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+
+.content_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.content_box {
+    background-color: #FFFFFF;
+    color: #000000;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+}
+
+.image_box {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+    height: 170px;
+    width: 300px;
+    background-image: url("https://cdn.pixabay.com/photo/2020/04/06/13/37/coffee-5009730_960_720.png");
+    background-size: contain;
+    background-position: center;
+}
+
+.detail_box_wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.detail_box1 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_box2 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_box3 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_title {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_category {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_intro {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_review {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_total {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_price {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
