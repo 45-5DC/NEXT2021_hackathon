@@ -73,6 +73,30 @@
 
 </div>
 
-</div>
+
+<button id="scrap-button" onclick="scrap()">스크랩하기</button>
+
+<script type="text/javascript">
+    const scrapButton = document.querySelector('#scrap-button')
+    
+    const scrap = () => {
+        fetch('/scrap/', {
+            method: "POST",
+            body: JSON.stringify({ post_pk: "{{ post.pk }}" })
+        })
+            .then(response=>response.json())
+            .then(res => {
+                if(res.scrap_count > 0){
+                    scrapButton.style.color ='red'
+                    scrapButton.textContent = "스크랩 취소"
+                } 
+                else {
+                    scrapButton.style.color ='blue'
+                    scrapButton.textContent = "스크랩하기"
+                }
+            } )
+            .catch(error => console.error(error))
+    }
+</script>
 
 {% endblock %}

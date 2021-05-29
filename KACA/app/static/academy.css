@@ -61,10 +61,13 @@
   flex-direction: column;
 }
 
-.academy_comment {
-  display: flex;
-  flex-direction: row;
-  
+.academy_comment{
+    display: flex;
+    flex-direction: row;
+}
+
+#scrap-button {
+    color: blue;
 }
 
 a {

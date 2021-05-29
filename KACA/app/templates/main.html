@@ -18,60 +18,52 @@
     </div>    
 </div>
 <div class = "line"></div>
+
+
 <div class = "container3">
     <div class= "academy-header">
         <p class="title1">On Recruit 학회</p>  
         <p class = "all"><a href = "{% url 'category' %}">전체보기</a></p>
     </div>
     <div class = "academy-content">
-        <div class = "content-set">
-            <div class = "box">       
-            </div>  
-            <p>학회명1</p>
-        </div>
-        <div class = "content-set">
-            <div class = "box">       
-            </div>  
-            <p>학회명2</p>
-        </div>
-        <div class = "content-set">
-            <div class = "box">       
-            </div>  
-            <p>학회명3</p>
-        </div>
-        <div class = "content-set">
-            <div class = "box">       
-            </div>  
-            <p>학회명4</p>
-        </div>
+        {% for post in posts %}
         
+        {% if forloop.counter < 5 %}
+        <div class = "content-set">
+            <div class = "box">  
+            {% if post.logo %}
+                <img src ='{{post.logo.url}}'>
+            {% endif %}       
+            </div>  
+            <a href="{% url 'academy' post.pk %}">
+                {{post.title}}</a>
+        </div>
+        {% endif %}
+        {% endfor %}
 </div>
+
+
 <div class = "container4">
     <div class= "lecture-header">
         <p class = "title1">Open Lecture</p>
         <p class = "all"><a href = "{% url 'lecture_main' %}">전체보기</a></p>
     </div>
     <div class = "lecture-content">
+        {% for lecture in lectures %}
+        
+        {% if forloop.counter < 5 %}
+     
         <div class = "content-set">
             <div class = "box">
+            {% if lecture.thumbnail %}
+                <img src ='{{lecture.thumbnail.url}}'>
+            {% endif %} 
             </div>
-            <p>lecture1</p>
+            <a href="{% url 'lecture_detail' lecture.pk %}">
+                {{lecture.title}}</a>
         </div>
-        <div class = "content-set">
-            <div class = "box">
-            </div>
-            <p>lecture2</p>
-        </div>
-        <div class = "content-set">
-            <div class = "box">
-            </div>
-            <p>lecture3</p>
-        </div>
-        <div class = "content-set">
-            <div class = "box">
-            </div>
-            <p>lecture4</p>
-        </div>
+        {% endif %}
+        {% endfor %}
     </div>
     
 </div>
