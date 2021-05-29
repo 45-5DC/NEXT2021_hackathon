@@ -6,19 +6,21 @@
 
 {% block content %}
 <div class="body">
-    <div class="icon">
-        <img src="logo.svg" width="314px" height="139px">
-    </div>
     {% if error %}
     <h3>{{ error }}</h3>
     {% endif %}
     <form method="POST">
         {% csrf_token %}
     <div class="login">
+        <div class="logo">
+            <img class = "logo_1" src = "{%static 'base_img/color letter.svg' %}">
+        </div>
         <div class="id">
         <input type="text" name="username" placeholder="아이디">
         </div>
+        <div class="password">
         <input type="password" name="password" placeholder="비밀번호">
+        </div>
     </div>
     <div class="login_btn">
         <button class="button" type="submit">로그인</button>

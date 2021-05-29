@@ -30,11 +30,10 @@
             <div class='academy_post_text'>{{ post.content }} 학회소개내용</div>
         </div>
         <div class ='academy_post_modify'>
-            <div class = 'academy_post_change'>수정</div>
-            <div class='academy_post_delete'>삭제</div>
+            <div class = 'academy_post_change'><a href="{% url 'academy_edit' post.pk %}">수정</a></div>
+            <div class= 'academy_post_delete'><a href="{% url 'academy_delete' post.pk %}">삭제</a></div>
         </div>
     </div>
-
     <div class='academy_comment_box'>
         <div class='academy_comment_title'>댓글</div>
         <div class='academy_comment'>
@@ -52,5 +51,21 @@
 
     </div>
 
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="댓글을 입력해주세요">
+        <button type="submit">댓글 쓰기</button>
+    </form>
+    {% endif %}
+    </div>
+    <div class="comment">
+    {% for comment in post.comments.all %}
+    <li>{{ comment.content }}</li>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
+        {{ user.username }}
+        <a href="{% url 'delete_academy_comment' post.comment.pk %}">삭제</a>
+        {% endif %}
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}

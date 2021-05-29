@@ -6,29 +6,32 @@
 
 {% block content %}
 <div class="body">
-    <div class="icon">
-        <img src="logo.svg" width="314px" height="139px">
-    </div>
+
     {% if error %}
     <h3>{{ error }}</h3>
     {% endif %}
     <form method="POST">
         {% csrf_token %}
         <div class="signup">
-            회원가입
-        </div>
-        <div class="signup">
+            <div class="logo">
+                <img class="logo_1" src="{%static 'base_img/color letter.svg' %}">
+            </div>
+            <div>
+                <h1>회원가입</h1>
+            </div>
             <div class="id">
                 <input type="text" name="username" placeholder="아이디">
                 <div class="id-content">*아이디 관련 유의사항</div>
             </div>
             <div class="password">
                 <input type="password" name="password" placeholder="비밀번호">
-                <div class="pas-content">*비밀번호 관련 유의사항</div>
+                <div class="pas-notice">*비밀번호 관련 유의사항</div>
                 <input type="password" name="password" placeholder="비밀번호 확인">
             </div>
-            <div class="login_btn">
+            <div>
                 <button class="button" type="submit">회원가입</button>
             </div>
-    </form>
-    {% endblock %}
+        </div>
+</div>
+</form>
+{% endblock %}
