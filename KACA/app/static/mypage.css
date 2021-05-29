@@ -1,16 +1,15 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
-* {
-    font-family: spoqa-han-sans;
-    background-color: black;
-    color: white;
-}
 
 .body {
     padding: 98px 128px 162px 112px;
     width: 1440px;
     height: 1834px;
+    font-family: spoqa-han-sans;
+    background-color: black;
+    color: white;
 }
+
 
 .like {
     width: 150px;
