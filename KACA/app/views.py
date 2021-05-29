@@ -96,7 +96,7 @@ def lecture_form(request):
             introduction = request.POST['introduction'],
             price = request.POST['price'],
             construct = request.POST['construct'],
-            category = request.POST['category'],
+            category = request.POST.get('category'),
             thumbnail = request.POST['thumbnail'],
             content = request.POST['content'],
             author = request.user
