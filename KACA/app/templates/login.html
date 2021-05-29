@@ -5,5 +5,28 @@
 {% endblock css %}
 
 {% block undefined %}
-
+<div class="body">
+    <div class="icon">
+        <img src="logo.svg" width="314px" height="139px">
+    </div>
+    {% if error %}
+    <h3>{{ error }}</h3>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+    <div class="login">
+        <div class="id">
+        <input type="text" name="username" placeholder="아이디">
+        </div>
+        <input type="password" name="password" placeholder="비밀번호">
+    </div>
+    <div class="login_btn">
+        <button class="button" type="submit" a href="{% url 'login' %}">로그인</button>
+    </div>
+    </form>
+    <hr width="1026px">
+        <h1>OR</h1>
+       <a class="button" href="#"> 카카오 로그인 </a>
+    </div>
+</div>
 {% endblock undefined %}
