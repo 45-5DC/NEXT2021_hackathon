@@ -16,10 +16,28 @@
         <div class="academy_category">
             <div class="category_title">학회</div>
             <div class='category_selection'>
-                <div class="select_bar">관심분야</div>
-                <div class="select_bar">마감기간순</div>
+                <form method="POST">
+                    <div class="select_bar">관심분야</div>
+                        <select class="interest">
+                            <option value="business">경영</option>
+                            <option value="economics">경제</option>
+                            <option value="humanities">인문</option>
+                            <option value="law">법</option>
+                            <option value="coding">코딩</option>
+                            <option value="lifescience">생명과학</option>
+                            <option value="environenginner">환경공학</option>
+                        </select>
+                    <div class="select_bar">정렬방식</div>
+                        <select class="deadline">
+                            <option value="business">마감기간순</option>
+                            <option value="economics">Like 많은 순</option>
+                        </select>
+                        
+                </form>    
             </div>
-            <div class ='academy_submit'>학회등록</div>
+            <div class ='academy_submit'>
+                <a href ="{% url 'academy_form' %}" class='bar'>학회등록</a>
+            </div>
         </div>
         <div class="academy_list">
             <div class='academy_content'>

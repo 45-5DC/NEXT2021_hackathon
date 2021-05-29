@@ -80,7 +80,7 @@ def lecture_detail(request, lecture_pk):
         )
         return redirect('lecture_detail', lecture_pk)
 
-    return render(request, 'lecture_detail.html')
+    return render(request, 'lecture_detail.html') , {'lecture': lecture}
 
 
 def academy_form(request):
@@ -104,3 +104,5 @@ def lecture_form(request):
         return redirect('lecture_detail', new_lecture.pk)
 
     return render(request, 'lecture_form.html')
+
+
