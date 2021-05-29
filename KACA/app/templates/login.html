@@ -1,14 +1,9 @@
 {% extends 'base.html' %}
 {% block css %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
 {% endblock css %}
 
-<<<<<<< HEAD
 {% block content %}
-=======
-{% block undefined %}
->>>>>>> 5c8af8ce9cc3329f75087d91d91127e1321e130f
 <div class="body">
     <div class="icon">
         <img src="logo.svg" width="314px" height="139px">
@@ -17,25 +12,17 @@
     <h3>{{ error }}</h3>
     {% endif %}
     <form method="POST">
-        {% csrf_token %}
-    <div class="login">
-        <div class="id">
-        <input type="text" name="username" placeholder="아이디">
+            {% csrf_token %}
+        <div class="login">
+            <div class="id">
+            <input type="text" name="username" placeholder="아이디">
+            </div>
+            <input type="password" name="password" placeholder="비밀번호">
         </div>
-        <input type="password" name="password" placeholder="비밀번호">
-    </div>
-    <div class="login_btn">
-        <button class="button" type="submit">로그인</button>
-    </div>
+        <div class="login_btn">
+            <button class="button" type="submit">로그인</button>
+        </div>
     </form>
-<<<<<<< HEAD
-    <hr width="1026px">
-        <h1>OR</h1>
-        <a class="button" href="#"> 카카오 로그인 </a>
-    </div>
 </div>
 {% endblock %}
-=======
-</div>
-{% endblock undefined %}
->>>>>>> 5c8af8ce9cc3329f75087d91d91127e1321e130f
+
