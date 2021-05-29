@@ -27,4 +27,5 @@ urlpatterns = [
     path('academy/', views.academy, name='academy'),
     path('lecture_main/', views.lecture_main, name='lecture_main'),
     path('lecture_detail/', views.lecture_detail, name='lecture_detail'),
+    
 ]
