@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'academy_form.css' %}">
 {% endblock css %}
 
-{% block undefined %}
+{% block content %}
 <form method="POST">
     {% csrf_token %}
     <div class="academy_form">
@@ -62,4 +62,4 @@
     </div>
 </form>
 
-{% endblock undefined %}
+{% endblock %}
