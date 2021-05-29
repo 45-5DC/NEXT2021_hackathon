@@ -4,6 +4,76 @@
 <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
 {% endblock css %}
 
-{% block undefined %}
+{% block content %}
+<div class = "container1">
+    <p class = "p-1">찾았다, 내 인생 학회</p>
+    <img class = "big" src = "{%static 'base_img/white letters.svg' %}">
+    <p class = "p-2">복잡한 학회 정보들을 한 번에 정리해 줄</p>
+    <p class = "p-3">단 하나의 플랫폼</p>
+</div>
+<div class = "container2">
+    <div class = "finder-box">
+        <input class = "enter" type = "text" placeholder="검색어를 입력해주세요">
+        <button class="button">검색</button>
+    </div>    
+</div>
+<div class = "line"></div>
+<div class = "container3">
+    <div class= "academy-header">
+        <p class="title1">On Recruit 학회</p>  
+        <p class = "all"><a href = "">전체보기</a></p>
+    </div>
+    <div class = "academy-content">
+        <div class = "content-set">
+            <div class = "box">       
+            </div>  
+            <p>학회명1</p>
+        </div>
+        <div class = "content-set">
+            <div class = "box">       
+            </div>  
+            <p>학회명2</p>
+        </div>
+        <div class = "content-set">
+            <div class = "box">       
+            </div>  
+            <p>학회명3</p>
+        </div>
+        <div class = "content-set">
+            <div class = "box">       
+            </div>  
+            <p>학회명4</p>
+        </div>
+        
+</div>
+<div class = "container4">
+    <div class= "lecture-header">
+        <p class = "title1">Open Lecture</p>
+        <p class = "all"><a href = "">전체보기</a></p>
+    </div>
+    <div class = "lecture-content">
+        <div class = "content-set">
+            <div class = "box">
+            </div>
+            <p>lecture1</p>
+        </div>
+        <div class = "content-set">
+            <div class = "box">
+            </div>
+            <p>lecture2</p>
+        </div>
+        <div class = "content-set">
+            <div class = "box">
+            </div>
+            <p>lecture3</p>
+        </div>
+        <div class = "content-set">
+            <div class = "box">
+            </div>
+            <p>lecture4</p>
+        </div>
+    </div>
+    
+</div>
 
-{% endblock undefined %}
+{% endblock %}

@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+    {% load static %}
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     {% block css %}
 
@@ -15,11 +16,43 @@
 
 <body>
     <div class="nav_bar">
+        <li class = "nav-item nav-home"><a href=""><img class = "logo_1" src = "{%static 'base_img/color letter.svg' %}"></a></li>
+        <div class = "item">
+            <li class = "nav-item nav-category"><a href="">Academy List</a></li>
+            <li class = "nav-item nav-lecture"><a href ="">Open Lecture</a></li>
+            <li class = "nav-item nav-login"><a href ="">로그인</a></li>
+            <li class = "nav-item nav-sign"><a href ="">회원가입</a></li>
+            <li class = "nav-item nav-mypage"><a href ="">마이페이지</a></li>  
+        </div> 
 
     </div>
-    {% block undefined %}
 
-    {% endblock undefined %}
+
+
+    </div>
+    <div class = "content">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <footer>
+        <div class= "footer_box">
+            <div class = "footer_left">
+                <div class = "footer_content line1">
+                    <p>개인정보처리방침   이용약관   문의</p>
+                </div>
+                <div class = "footer_content line2">
+                    <p>NEXT X LIKELION 9TH HACKATHON</p>
+                </div>
+                <div class = "footer_content line3">
+                    <p>Copyright KACA All rights reserved.</p>
+                </div>
+            </div>
+            <div class = "footer_img">
+                <img class = "logo_2" src = "{%static 'base_img/color letter.svg'%}"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
