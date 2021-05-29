@@ -24,19 +24,42 @@ body {
     border-radius: 4px;
     font-size: 18px;
     font-weight: bold;
-    margin-right: 50px;
+    margin-right: 100px;
+    margin-top: 50px;
 }
 
 .like-cate {
     display: flex;
+    width: 804px;
     justify-content: space-around;
     margin-bottom: 178px;
 }
 
-h1 {
+.likes {
+    font-size: 36px;
+    font-weight: bold;
+    width: 1241px;
+    margin-top: 137px;
+}
+
+.like-aca1 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: left;
-    margin-top: 208px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1054px;
+    margin: 100px 0px 100px 0px;
+}
+
+.like-aca-bold {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.like-aca-content {
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+
+.like-aca-cate {
+    font-size: 18px;
 }

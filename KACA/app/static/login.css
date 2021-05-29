@@ -2,6 +2,7 @@
 * {
     font-family: spoqa-han-sans;
     background-color: black;
+    font-size: 28px;
 }
 
 .body {
@@ -23,6 +24,7 @@
 input {
     width: 517px;
     height: 57px;
+    border-radius: 50px;
 }
 
 .login_btn{
