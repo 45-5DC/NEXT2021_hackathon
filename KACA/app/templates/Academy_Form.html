@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Academy_Form.css' %}">
+{% endblock css %}
+
+{% block undefined %}
+<div class="academy_form">
+    <div>
+        <div class='academy_name'>학회명</div>
+        <div class='name_form'>학회명이 들어감</div>
+    </div>
+    <div>
+        <div class='short_intro'>한줄소개</div>
+        <div class='intro_form'>한줄소개가 들어감</div>
+    </div>
+    <div>
+        <div>
+            <div class='apply_start'>마감기간(시작)</div>
+            <div class='start_form'>마감기간 시작일</div>
+        </div>
+        <div>
+            <div class='apply_end'>마감기간(끝)</div>
+            <div class='end_form'>마감기간 마감일</div>
+        </div>
+    </div>
+    <div>
+        <div class='academy_category'>학회분류</div>
+        <div class='category_form'>분류</div>
+    </div>
+    <div>
+        <div class='applicant'>모집대상</div>
+        <div class='applicant_form'>모집대상이 들어감</div>
+    </div>
+    <div>
+        <div class='academy_pic'>학회이미지</div>
+        <div class='pic_form'>학회이미지가 들어감</div>
+    </div>
+    <div>
+        <div class='academy_description'>학회소개글</div>
+        <div class='description_form'>소개글이 들어감</div>
+    </div>
+    <div class= 'submission'>제출</div>
+</div>
+
+{% endblock undefined %}
