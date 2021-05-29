@@ -16,13 +16,13 @@
 
 <body>
     <div class="nav_bar">
-        <li class = "nav-item nav-home"><a href=""><img class = "logo_1" src = "{%static 'base_img/color letter.svg' %}"></a></li>
+        <li class = "nav-item nav-home"><a href="{% url 'main' %}"><img class = "logo_1" src = "{%static 'base_img/color letter.svg' %}"></a></li>
         <div class = "item">
-            <li class = "nav-item nav-category"><a href="">Academy List</a></li>
-            <li class = "nav-item nav-lecture"><a href ="">Open Lecture</a></li>
-            <li class = "nav-item nav-login"><a href ="">로그인</a></li>
-            <li class = "nav-item nav-sign"><a href ="">회원가입</a></li>
-            <li class = "nav-item nav-mypage"><a href ="">마이페이지</a></li>  
+            <li class = "nav-item nav-category"><a href="{% url 'category' %}">Academy List</a></li>
+            <li class = "nav-item nav-lecture"><a href ="{% url 'lecture_main' %}">Open Lecture</a></li>
+            <li class = "nav-item nav-login"><a href ="{% url 'login' %}">로그인</a></li>
+            <li class = "nav-item nav-sign"><a href ="{% url 'signup' %}">회원가입</a></li>
+            <li class = "nav-item nav-mypage"><a href ="{% url 'mypage' %}">마이페이지</a></li>  
         </div> 
 
     </div>
