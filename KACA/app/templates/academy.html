@@ -9,7 +9,9 @@
     <div class='academy_intro'>
         <div class='academy_content'>
             <div class = 'academy_pic'>
-                <img src='{{post.logo}}'>   
+            {% if post.logo %}
+                <img src='{{post.logo.url}}'>   
+            {% endif %} 
             <div class = 'academy_description'>
                 <div class = 'academy_profile'>
                     <div class ='academy_title'>{{post.title}} </div>
@@ -27,8 +29,11 @@
     <div class='academy_post_box'>
         <div class ='academy_post_title'>{{post.title}}</div>
         <div class='academy_post'>
-            <div class='academy_post_pic'><img src='{{post.logo}}'></div>
-            <div class='academy_post_text'>{{ post.content }} 학회소개내용</div>
+            <div class='academy_post_pic'>
+            {% if post.logo %}
+                <img src='{{post.logo.url}}'>   
+            {% endif %} 
+            <div class='academy_post_text'>{{post.content}} </div>
         </div>
         <div class ='academy_post_modify'>
             <div class = 'academy_post_change'><a href="{% url 'academy_edit' post.pk %}">수정</a></div>
@@ -52,6 +57,7 @@
 
     </div>
 
+    {% if user.is_authenticated %}  
     <form method="POST">
         {% csrf_token %}
         <input type="text" name="content" placeholder="댓글을 입력해주세요">

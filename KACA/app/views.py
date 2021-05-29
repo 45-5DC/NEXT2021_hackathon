@@ -110,7 +110,7 @@ def academy_form(request):
             apply_end = request.POST['apply_end'],
             category = request.POST['category'],
             target = request.POST['target'],
-            logo = request.POST['logo'],
+            logo = request.FILES['logo'],
             content = request.POST['content'],
             author = request.user
         )
@@ -128,7 +128,7 @@ def academy_edit(request, post_pk):
             apply_end = request.POST['apply_end'],
             category = request.POST['category'],
             target = request.POST['target'],
-            logo = request.POST['logo'],
+            logo = request.FILES['logo'],
             content = request.POST['content'],
             author = request.user
         )
@@ -170,7 +170,7 @@ def lecture_edit(request, lecture_pk):
             price = request.POST['price'],
             construct = request.POST['construct'],
             category = request.POST['category'],
-            thumbnail = request.POST['thumbnail'],
+            thumbnail = request.FILES['thumbnail'],
             content = request.POST['content'],
             author = request.user
         )

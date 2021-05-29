@@ -49,7 +49,11 @@
                 </div>
                 <div class = 'academy_description'>
                     <div class = 'academy_profile'>
-                        <div class ='academy_title'>{{post.title}}</div>
+                        <div class ='academy_title'>
+                            <a href="{% url 'academy' post.pk %}">
+                            {{post.title}}
+                            </a>
+                        </div>
                         <div class ='academy_sorting'>{{post.category}}</div>
                     </div>
                     <div class = 'short_description'>{{post.content}}</div>

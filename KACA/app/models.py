@@ -8,11 +8,11 @@ class Post(models.Model):
     introduction = models.CharField(max_length=200, default=None)
     content = models.TextField(default=None)
     target = models.CharField(max_length=200, default=None)
-    logo = models.ImageField(blank=True)
+    logo = models.ImageField(blank=True, upload_to='')
     apply_start = models.DateTimeField(null=True, blank=True)
     apply_end = models.DateTimeField(null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', null=True, default=None)
-    category = models.CharField(max_length=10, default=None)
+    category = models.CharField(max_length=200, default=None)
 
     def __str__(self):
         return self.title
