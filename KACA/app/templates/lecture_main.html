@@ -16,13 +16,21 @@
             <form method="POST">
                 <select class="property_catetgory">
                     <option value="0" selected>관심분야</option>
+                    <option value="business">경영</option>
+                    <option value="economics">경제</option>
+                    <option value="humanities">인문</option>
+                    <option value="law">법</option>
+                    <option value="coding">코딩</option>
+                    <option value="lifescience">생명과학</option>
+                    <option value="environenginner">환경공학</option>
+
                 </select>
                 <select class="property_deadline">
                     <option value="0" selected>마감기간순</option>
                 </select>
             </form>
             <div class='new_post'>
-                새 글 작성
+                <a href="{% url 'lecture_form' %}">새 글 작성</a>
             </div>
         </div>
     </div>

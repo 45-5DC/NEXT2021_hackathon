@@ -6,8 +6,11 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def main(request):
+    posts = Post.objects.all()
+    # posts = Post.objects.filter() # 기한 설정 해야함
+    lectures = Lecture.objects.all()
 
-    return render(request, 'main.html')
+    return render(request, 'main.html', {'posts': posts, 'lectures': lectures})
 
 def signup(request):
     if (request.method == 'POST'):
@@ -47,7 +50,7 @@ def logout(request):
 
     return redirect('main')
 
-@login_required
+@login_required(login_url='/login')
 def mypage(request):
 
 
@@ -82,9 +85,22 @@ def lecture_detail(request, lecture_pk):
 
 def academy_form(request):
     
-    return render(request, 'Academy_Form.html')
+    return render(request, 'academy_form.html')
 
 
+@login_required(login_url='/login')
 def lecture_form(request):
-    
-    return render(request, 'Lecture_Form.html')
+    if request.method == 'POST':
+        new_lecture = Lecture.objects.create(
+            title = request.POST['title'],
+            introduction = request.POST['introduction'],
+            price = request.POST['price'],
+            construct = request.POST['construct'],
+            category = request.POST['category'],
+            thumbnail = request.POST['thumbnail'],
+            content = request.POST['content'],
+            author = request.user
+        )
+        return redirect('lecture_detail', new_lecture.pk)
+
+    return render(request, 'lecture_form.html')
