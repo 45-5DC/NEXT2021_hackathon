@@ -9,11 +9,17 @@
 .academy_content{
     display: flex;
     flex-direction: row;
+    width: 1200px;
 }
 
 .academy_description{
     display: flex;
     flex-direction: column;
+}
+
+.duedate {
+    display: flex;
+    float: right;
 }
 
 .academy_profile{

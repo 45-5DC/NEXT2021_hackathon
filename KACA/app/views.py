@@ -82,8 +82,18 @@ def lecture_detail(request, lecture_pk):
 
     return render(request, 'lecture_detail.html')
 
-
+@login_required(login_url='/login')
 def academy_form(request):
+    if request.method == 'POST':
+            new_academy = Post.objects.create(
+                title = request.POST['title'],
+                content = request.POST['content'],
+                apply_start = request.POST['apply_start'],
+                apply_end = request.POST['apply_end'],
+                category = request.POST['category'],
+                logo = request.POST['logo',]
+            )
+            return redirect('academy', new_academy.pk)
     
     return render(request, 'academy_form.html')
 
