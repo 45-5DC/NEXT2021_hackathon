@@ -96,21 +96,6 @@ def lecture_detail(request, lecture_pk):
 
     return render(request, 'lecture_detail.html') , {'lecture': lecture}
 
-<<<<<<< HEAD
-@login_required(login_url='/login')
-def academy_form(request):
-    if request.method == 'POST':
-            new_academy = Post.objects.create(
-                title = request.POST['title'],
-                content = request.POST['content'],
-                apply_start = request.POST['apply_start'],
-                apply_end = request.POST['apply_end'],
-                category = request.POST['category'],
-                logo = request.POST['logo',]
-            )
-            return redirect('academy', new_academy.pk)
-    
-=======
 def delete_lecture_comment(request, lecture_pk, lecture_comment_pk):
     lecture_comment = Lecture_comment.objects.get(pk=lecture_comment_pk)
     lecture_comment.delete()
@@ -131,7 +116,6 @@ def academy_form(request):
             author = request.user
         )
         return redirect('academy', new_post.pk)
->>>>>>> 6fb0f13ce13591809b0a42d2d9f18bcfb0ed8785
     return render(request, 'academy_form.html')
 
 def academy_edit(request, post_pk):
