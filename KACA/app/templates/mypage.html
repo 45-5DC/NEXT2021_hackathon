@@ -4,6 +4,51 @@
 <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
 {% endblock css %}
 
-{% block undefined %}
-
-{% endblock undefined %}
+{% block content %}
+<div class="likes">
+    내 관심 분야
+</div>
+<div class="like-cate">
+    <div class="like">코딩</div>
+    <div class="like">경영</div>
+    <div class="like">금융</div>
+</div>
+<hr width="1241px">
+<div class="likes">
+    Like 학회
+</div>
+<div class="like-aca1">
+    <div class="like-aca-logo">
+        <img src="#">
+    </div>
+    <div class="like-caca-box">
+        <div class="like-aca-bold">LIKELION</div>
+        <div class="like-aca-content">
+            한줄설명:
+            <br></br>
+            모집대상:
+        </div>
+        <div class="like-aca-bold">2021-05-29</div>
+    </div>
+    <div class="like-aca-cate">학회 분류: ##</div>
+</div>
+<div class="like-aca1">
+    <div class="like-aca-logo">
+        <img src="#">
+    </div>
+    <div class="like-caca">
+        <div class="like-aca-bold">LIKELION</div>
+        <div class="like-aca-content">
+            한줄설명:
+            <br></br>
+            모집대상:
+        </div>
+        <div class="like-aca-bold">2021-05-29</div>
+    </div>
+    <div class="like-aca-cate">학회 분류: ##</div>
+</div>
+<hr width="1241px">
+<div class="likes">
+    학회모집일정
+</div>
+{% endblock %}

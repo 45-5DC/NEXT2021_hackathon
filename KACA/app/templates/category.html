@@ -2,8 +2,52 @@
 {% block css %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'category.css' %}">
+
 {% endblock css %}
 
-{% block undefined %}
 
-{% endblock undefined %}
+{% block content %}
+<div class="category_page">
+    <div class = 'search_bar_box'> 
+        <div class ='bar_title'>학회검색</div>
+        <div class ="search_bar">검색어를 입력해주세요</div>
+    </div>
+    <div class = 'academy_contents_box'> 
+        <div class="academy_category">
+            <div class="category_title">학회</div>
+            <div class='category_selection'>
+                <div class="select_bar">관심분야</div>
+                <div class="select_bar">마감기간순</div>
+            </div>
+        </div>
+        <div class="academy_list">
+            <div class='academy_content'>
+                <div class = 'academy_pic'>학회 사진</div>
+                <div class = 'academy_description'>
+                    <div class = 'academy_profile'>
+                        <div class ='academy_title'>LikeLion</div>
+                        <div class ='academy_sorting'>학회분류: 경영,코딩</div>
+                    </div>
+                    <div class = 'short_description'>이 학회에서는 무엇을 배우고 무엇을 합니다</div>
+                    <div class= 'applicant'>'학번무관 학년무관</div>
+                    <div class='duedate'>마감기간: 2021-03-09</div>
+                </div>
+            </div>
+            <div class='academy_content'>
+                <div class = 'academy_pic'>학회 사진</div>
+                <div class = 'academy_description'>
+                    <div class = 'academy_profile'>
+                        <div class ='academy_title'>LikeLion</div>
+                        <div class ='academy_sorting'>학회분류: 경영,코딩</div>
+                    </div>
+                    <div class = 'short_description'>이 학회에서는 무엇을 배우고 무엇을 합니다</div>
+                    <div class= 'applicant'>'학번무관 학년무관</div>
+                    <div class='duedate'>마감기간: 2021-03-09</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+{% endblock %}

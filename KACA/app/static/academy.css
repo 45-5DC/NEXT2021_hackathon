@@ -1,0 +1,51 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+.academy_page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.academy_content{
+    width: 1000px;
+    height: 200px;
+    margin: 40px;    
+    display: flex;
+    flex-direction: row;
+}
+
+.academy_description{
+    display: flex;
+    flex-direction: column;
+}
+
+.academy_profile{
+    display: flex;
+    flex-direction: row;
+}
+
+.academy_post_box{
+    display: flex;
+    flex-direction: column;
+}
+
+.academy_post{
+    display: flex;
+    flex-direction: column;
+}
+
+.academy_post_modify{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.academy_comment_box{
+    display: flex;
+    flex-direction: column;
+}
+
+.academy_comment{
+    display: flex;
+    flex-direction: row;
+}

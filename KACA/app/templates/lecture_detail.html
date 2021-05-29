@@ -4,6 +4,118 @@
 <link rel="stylesheet" type="text/css" href="{% static 'lecture_detail.css' %}">
 {% endblock css %}
 
-{% block undefined %}
+{% block content %}
+<div class="whole_wrapper">
+    <div class="title_wrapper">
+        <div class="title_image_box">
 
-{% endblock undefined %}
+        </div>
+
+        <div class="title_intro_box">
+            <div class="title_title">
+                학회명 - 강좌명
+            </div>
+            <div class="title_intro">
+                한 줄 설명: 이 강좌에서는 무엇을 배웁니다.
+            </div>
+            <div class="title_detail">
+                <div class="title_review">
+                    리뷰 4.9 / 5.0
+                </div>
+                <div class="title_total">
+                    5 강의 / 총 6h
+                </div>
+                <div class="title_price">
+                    10,000원 / 30일
+                </div>
+            </div>
+            <button> 강의 신청하기 </button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="content_wrapper">
+        <div class="content_title">강좌 소개</div>
+        <div class="content_content_box">
+            <div class="content_image">
+                강좌에 대한 소개 이미지
+            </div>
+            <div class="content_content">
+                강좌에 대한 소개 텍스트
+            </div>
+        </div>
+        <div class="content_button">
+            <button>수정</button>
+            <button>삭제</button>
+        </div>
+    </div>
+
+    <div class="review_wrapper">
+        <div class="review_title">
+            <div class="review_title_title">리뷰</div>
+            <div class="review_title_score">4.9 / 5.0</div>
+        </div>
+
+        <div class="comment_wrapper">
+
+            <div class="comment_box">
+                <div class="comment_author">
+                    작성자명
+                </div>
+                <div class="comment_review">
+                    4.5 / 5.0
+                </div>
+                <div class="comment_content">
+                    댓글 내용
+                </div>
+                <button>수정</button>
+                <button>삭제</button>
+            </div>
+
+            <div class="comment_box">
+                <div class="comment_author">
+                    작성자명
+                </div>
+                <div class="comment_review">
+                    4.5 / 5.0
+                </div>
+                <div class="comment_content">
+                    댓글 내용
+                </div>
+                <button>수정</button>
+                <button>삭제</button>
+            </div>
+
+            <div class="comment_box">
+                <div class="comment_author">
+                    작성자명
+                </div>
+                <div class="comment_review">
+                    4.5 / 5.0
+                </div>
+                <div class="comment_content">
+                    댓글 내용
+                </div>
+                <button>수정</button>
+                <button>삭제</button>
+            </div>
+
+            <div class="comment_box">
+                <div class="comment_author">
+                    작성자명
+                </div>
+                <div class="comment_review">
+                    4.5 / 5.0
+                </div>
+                <div class="comment_content">
+                    댓글 내용
+                </div>
+                <button>수정</button>
+                <button>삭제</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
