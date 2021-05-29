@@ -11,12 +11,18 @@
 }
 
 .academy_content {
+  display: flex;
+  flex-direction: row;
   width: 1000px;
   height: 200px;
   margin: 40px;
   display: flex;
   flex-direction: row;
   width: 1200px;
+}
+
+.academy_info {
+  padding-left: 50px;;
 }
 
 .academy_description {
@@ -50,6 +56,7 @@
 }
 
 .academy_comment_box {
+  font-size: 18px;
   display: flex;
   flex-direction: column;
 }
@@ -57,4 +64,9 @@
 .academy_comment {
   display: flex;
   flex-direction: row;
+  
+}
+
+a {
+  text-decoration: none;
 }

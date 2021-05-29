@@ -2,12 +2,14 @@
 
 
 .body {
-    padding: 98px 128px 162px 112px;
-    width: 1440px;
-    height: 1834px;
+    width: 100%;
+    height: auto;
     font-family: spoqa-han-sans;
     background-color: black;
     color: white;
+    justify-content: center;
+    padding: 100px;
+    padding-right: 32px;
 }
 
 
@@ -27,16 +29,18 @@
 
 .like-cate {
     display: flex;
-    width: 804px;
+    width: 704px;
     justify-content: space-around;
+    padding-left: 100px;
     margin-bottom: 178px;
 }
 
 .likes {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
     width: 1241px;
-    margin-top: 137px;
+    margin-bottom: 137px;
+    margin-top: 120px;
 }
 
 .like-aca1 {
