@@ -41,7 +41,11 @@
         </div>
         <div class="academy_list">
             <div class='academy_content'>
-                <div class = 'academy_pic'>학회 사진</div>
+                <div class = 'academy_pic'>
+                    {% if lecture.thumbnail %}
+                    <img src ='{{lecture.thumbnail.url}}'>
+                {% endif %}
+                </div>
                 <div class = 'academy_description'>
                     <div class = 'academy_profile'>
                         <div class ='academy_title'>LikeLion</div>
