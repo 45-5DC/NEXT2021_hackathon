@@ -85,7 +85,7 @@ def lecture_main(request):
 def lecture_detail(request, lecture_pk):
     lecture = Lecture.objects.get(pk=lecture_pk)
 
-    if request.method=='POST':
+    if request.method =='POST':
         content = request.POST['content']
         Lecture_comment.objects.create(
             lecture=lecture,
@@ -93,8 +93,7 @@ def lecture_detail(request, lecture_pk):
             author = request.user
         )
         return redirect('lecture_detail', lecture_pk)
-
-    return render(request, 'lecture_detail.html') , {'lecture': lecture}
+    return render(request, 'lecture_detail.html' , {'lecture': lecture} )
 
 def delete_lecture_comment(request, lecture_pk, lecture_comment_pk):
     lecture_comment = Lecture_comment.objects.get(pk=lecture_comment_pk)
@@ -111,7 +110,7 @@ def academy_form(request):
             apply_end = request.POST['apply_end'],
             category = request.POST['category'],
             target = request.POST['target'],
-            logo = request.POST['logo'],
+            logo = request.FILES['logo'],
             content = request.POST['content'],
             author = request.user
         )
@@ -129,7 +128,7 @@ def academy_edit(request, post_pk):
             apply_end = request.POST['apply_end'],
             category = request.POST['category'],
             target = request.POST['target'],
-            logo = request.POST['logo'],
+            logo = request.FILES['logo'],
             content = request.POST['content'],
             author = request.user
         )
@@ -150,11 +149,11 @@ def lecture_form(request):
             price = request.POST['price'],
             construct = request.POST['construct'],
             category = request.POST['category'],
-            thumbnail = request.POST['thumbnail'],
+            thumbnail = request.FILES['thumbnail'],
             content = request.POST['content'],
             author = request.user
         )
-        return redirect('lecture_main') ##이거 고쳐야됨##
+        return redirect('lecture_detail', new_lecture.pk) ##이거 고쳐야됨##
 
     return render(request, 'lecture_form.html')
 
@@ -171,7 +170,7 @@ def lecture_edit(request, lecture_pk):
             price = request.POST['price'],
             construct = request.POST['construct'],
             category = request.POST['category'],
-            thumbnail = request.POST['thumbnail'],
+            thumbnail = request.FILES['thumbnail'],
             content = request.POST['content'],
             author = request.user
         )

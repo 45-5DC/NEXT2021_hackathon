@@ -8,7 +8,9 @@
 <div class="whole_wrapper">
     <div class="title_wrapper">
         <div class="title_image_box">
-        {{lecture.thumbnail}}   
+        {% if lecture.thumbnail %}
+            <img src ='{{lecture.thumbnail.url}}'>
+        {% endif %}  
         </div>
 
         <div class="title_intro_box">
@@ -16,17 +18,15 @@
                 {{lecture.title}}   
             </div>
             <div class="title_intro">
-                한 줄 설명: 이 강좌에서는 무엇을 배웁니다.
+                {{lecture.introduction}}
             </div>
             <div class="title_detail">
-                <div class="title_review">
-                    리뷰 4.9 / 5.0
-                </div>
+               
                 <div class="title_total">
-                    5 강의 / 총 6h
+                    {{lecture.construct}}
                 </div>
                 <div class="title_price">
-                    10,000원 / 30일
+                    {{lecture.price}}
                 </div>
             </div>
             <button> 강의 신청하기 </button>
@@ -39,83 +39,48 @@
         <div class="content_title">강좌 소개</div>
         <div class="content_content_box">
             <div class="content_image">
-                강좌에 대한 소개 이미지
+                {{lecture.thumbnail}}
             </div>
             <div class="content_content">
-                강좌에 대한 소개 텍스트
+                {{lecture.content}}
             </div>
         </div>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
         <div class="content_button">
-            <button>수정</button>
-            <button>삭제</button>
+            <a href= "{% url 'edit' lecture.pk %}"> 수정하기 </a>
+            <a href= "{% url 'delete' lecture.pk %}"> 삭제하기 </a>
         </div>
+        {% endif %}
     </div>
 
     <div class="review_wrapper">
-        <div class="review_title">
-            <div class="review_title_title">리뷰</div>
-            <div class="review_title_score">4.9 / 5.0</div>
-        </div>
-
+     
         <div class="comment_wrapper">
 
             <div class="comment_box">
-                <div class="comment_author">
-                    작성자명
+                {% if user.is_authenticated %}    
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type='text' name='content' placeholder="댓글을 달아주세요">
+                    <button type = 'submit'>댓글쓰기</button>
+                </form>
+                {% endif %}
                 </div>
-                <div class="comment_review">
-                    4.5 / 5.0
+
+                {% for lecture_comment in lecture.lecture_comments.all %}
+                <div class="comment"> {{lecture_comment.content}}
+                    {% if user.is_authenticated and lecture_comment.author.pk == user.pk %}
+                    <a href="{% url 'delete_lecture_comment' lecture.pk lecture_comment.pk %}">삭제</a>
+                    {% endif %}
                 </div>
-                <div class="comment_content">
-                    댓글 내용
-                </div>
-                <button>수정</button>
-                <button>삭제</button>
+                {% endfor %}
+                
             </div>
 
-            <div class="comment_box">
-                <div class="comment_author">
-                    작성자명
-                </div>
-                <div class="comment_review">
-                    4.5 / 5.0
-                </div>
-                <div class="comment_content">
-                    댓글 내용
-                </div>
-                <button>수정</button>
-                <button>삭제</button>
-            </div>
-
-            <div class="comment_box">
-                <div class="comment_author">
-                    작성자명
-                </div>
-                <div class="comment_review">
-                    4.5 / 5.0
-                </div>
-                <div class="comment_content">
-                    댓글 내용
-                </div>
-                <button>수정</button>
-                <button>삭제</button>
-            </div>
-
-            <div class="comment_box">
-                <div class="comment_author">
-                    작성자명
-                </div>
-                <div class="comment_review">
-                    4.5 / 5.0
-                </div>
-                <div class="comment_content">
-                    댓글 내용
-                </div>
-                <button>수정</button>
-                <button>삭제</button>
-            </div>
+           
 
         </div>
     </div>
 </div>
+
 {% endblock %}

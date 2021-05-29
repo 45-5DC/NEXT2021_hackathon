@@ -39,12 +39,15 @@
         {% for lecture in lectures %}
         <div class="content_box">
             <div class="image_box">
-                {{lecture.thumbnail}}
+                {% if lecture.thumbnail %}
+                    <img src ='{{lecture.thumbnail.url}}'>
+                {% endif %}
+               
             </div>
             <div class="detail_box_wrapper">
                 <div class="detail_box1">
                     <div class="detail_title">
-                        <a href="{% url 'lecture_detail' lecture.pk %">{{lecture.title}}</a>
+                        <a href="{% url 'lecture_detail' lecture.pk %}">{{lecture.title}}</a>
                     </div>
                     <div class="detail_category">
                         <p>{{lecture.category}}</p>
