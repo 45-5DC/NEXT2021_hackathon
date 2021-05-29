@@ -8,7 +8,9 @@
 <div class="whole_wrapper">
     <div class="title_wrapper">
         <div class="title_image_box">
-        {{lecture.thumbnail}}   
+        {% if lecture.thumbnail %}
+            <img src ='{{lecture.thumbnail.url}}'>
+        {% endif %}  
         </div>
 
         <div class="title_intro_box">
@@ -80,4 +82,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
