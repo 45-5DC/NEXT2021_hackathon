@@ -73,9 +73,9 @@
   flex-direction: column;
 }
 
-.academy_comment{
-    display: flex;
-    flex-direction: row;
+.academy_comment {
+  display: flex;
+  flex-direction: row;
 }
 
 .scrap-button {
@@ -86,7 +86,7 @@
   border: 2px solid white;
   border-radius: 10px;
   text-align: center;
-  color:white;
+  color: white;
   font-size: 14px;
   font-weight: bold;
 }
@@ -96,8 +96,8 @@ a {
 }
 
 .aca-logo {
-  width: 1200px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   padding-top: 45px;
 }
 
@@ -111,7 +111,7 @@ a {
   color: black;
 }
 
-.academy_post_change{
+.academy_post_change {
   width: 100px;
   height: 30px;
   padding-top: 5px;
@@ -121,7 +121,7 @@ a {
   text-align: center;
   margin-left: 50px;
   margin-right: 50px;
-  color:white;
+  color: white;
 }
 
 .academy_post_delete {
@@ -133,7 +133,7 @@ a {
   border-radius: 10px;
   text-align: center;
   margin-right: 50px;
-  color:white;
+  color: white;
 }
 
 .academy_comment_title {

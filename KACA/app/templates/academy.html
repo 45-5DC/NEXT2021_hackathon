@@ -77,7 +77,7 @@
 </div>
 
 <script type="text/javascript">
-    const scrapButton = document.querySelector('#scrap-button')
+    const scrapButton = document.querySelector('.scrap-button')
 
     const scrap = () => {
         fetch('/scrap/', {
@@ -91,7 +91,7 @@
                     scrapButton.textContent = "스크랩 취소"
                 }
                 else {
-                    scrapButton.style.color = 'blue'
+                    scrapButton.style.color = 'white'
                     scrapButton.textContent = "스크랩하기"
                 }
             })
