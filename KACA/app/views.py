@@ -96,6 +96,43 @@ def category_lifescience(request):
 
 
 
+def lecture_business(request):
+    lectures = Lecture.objects.filter(category="business")
+
+    return render(request, 'lecture_business.html', {'lectures': lectures})
+
+def lecture_coding(request):
+    lectures = Lecture.objects.filter(category="coding")
+
+    return render(request, 'lecture_coding.html',{'lectures': lectures})
+
+def lecture_economics(request):
+    lectures = Lecture.objects.filter(category="economics")
+
+    return render(request, 'lecture_economics.html', {'lectures': lectures})
+
+def lecture_environengineer(request):
+    lectures = Lecture.objects.filter(category="environenginner")
+
+    return render(request, 'lecture_environengineer.html',{'lectures': lectures})
+
+def lecture_humanities(request):
+    lectures = Lecture.objects.filter(category="humanities")
+
+    return render(request, 'lecture_humanities.html', {'lectures': lectures})
+
+def lecture_law(request):
+    lectures = Lecture.objects.filter(category="law")
+
+    return render(request, 'lecture_law.html', {'lectures': lectures})
+
+def lecture_lifescience(request):
+    lectures = Lecture.objects.filter(category="lifescience")
+
+    return render(request, 'lecture_lifescience.html', {'lectures': lectures})
+
+
+
 
 def category(request):
     posts = Post.objects.all()

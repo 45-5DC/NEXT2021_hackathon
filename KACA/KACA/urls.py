@@ -45,6 +45,13 @@ urlpatterns = [
     path('lecture_delete/<int:lecture_pk>/', views.lecture_delete, name='lecture_delete'),
     path('academy_form/', views.academy_form, name='academy_form'),    
     path('lecture_form/', views.lecture_form, name='lecture_form'),    
+    path('lecture_business/', views.lecture_business, name='lecture_business'),    
+    path('lecture_economics/', views.lecture_economics, name='lecture_economics'),    
+    path('lecture_coding/', views.lecture_coding, name='lecture_coding'),    
+    path('lecture_environengineer/', views.lecture_environengineer, name='lecture_environengineer'),    
+    path('lecture_law/', views.lecture_law, name='lecture_law'),    
+    path('lecture_lifescience/', views.lecture_lifescience, name='lecture_lifescience'),    
+    path('lecture_humanities/', views.lecture_humanities, name='lecture_humanities'),    
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
     path('scrap/', views.scrap, name="scrap")
 ]
