@@ -23,16 +23,16 @@
         </div>
         <div class = "item">
             <div class = "left">
-                <div class = "nav-item nav-category"><a href="">Academy List</a></div>
+                <div class = "nav-item nav-category"><a href="{% url 'category' %}">Academy List</a></div>
                 <p>|</p>
-                <div class = "nav-item nav-lecture"><a href ="">Open Lecture</a></div>
+                <div class = "nav-item nav-lecture"><a href ="{% url 'lecture_main' %}">Open Lecture</a></div>
             </div>
             <div class = "right">
                 <div class = "nav-login"><a href ="{% url 'login' %}">로그인</a></div>
                 <p>|</p>
-                <div class = "nav-sign"><a href ="">회원가입</a></div>
+                <div class = "nav-sign"><a href ="{% url 'signup' %}">회원가입</a></div>
                 <p>|</p>
-                <div class = "nav-mypage"><a href ="">마이페이지</a></div>  
+                <div class = "nav-mypage"><a href ="{% url 'mypage' user.pk %}">마이페이지</a></div>  
             </div>
         </div> 
 
