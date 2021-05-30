@@ -6,51 +6,27 @@
 
 {% block content %}
 <div class="body">
-<div class="likes">
-    내 관심 분야
-</div>
-<div class="like-cate">
-    <div class="like">코딩</div>
-    <div class="like">경영</div>
-    <div class="like">금융</div>
-</div>
-<hr width="1241px">
-<div class="likes">
-    Like 학회
-</div>
-<div class="like-aca1">
-    <div class="like-aca-logo">
-        <img src="#">
+    <div class="likes">
+        스크랩한 학회
     </div>
-    <div class="like-caca-box">
-        <div class="like-aca-bold">LIKELION</div>
-        <div class="like-aca-content">
-            한줄설명:
-            <br></br>
-            모집대상:
+    {% for scrap in scraps %}
+    <div class="like-aca1">
+        <div class="like-aca-logo">
+            {% if scrap.post.logo %}
+            <img src="{{scrap.post.logo.url}}" />
+            {% endif %}
         </div>
-        <div class="like-aca-bold">2021-05-29</div>
-    </div>
-    <div class="like-aca-cate">학회 분류: ##</div>
-</div>
-<div class="like-aca1">
-    <div class="like-aca-logo">
-        <img src="#">
-    </div>
-    <div class="like-caca">
-        <div class="like-aca-bold">LIKELION</div>
-        <div class="like-aca-content">
-            한줄설명:
-            <br></br>
-            모집대상:
+        <div class="like-caca-box">
+            <div class="like-aca-bold">{{scrap.post}}</div>
+            <div class="like-aca-content">
+                한 줄 설명: {{scrap.post.introduction}}
+                <br></br>
+                모집 대상: {{scrap.post.target}}
+            </div>
+            <div class="like-aca-bold">마감 기한: {{scrap.post.apply_end}}</div>
         </div>
-        <div class="like-aca-bold">2021-05-29</div>
+        <div class="like-aca-cate">학회 분류: {{scrap.post.category}}</div>
     </div>
-    <div class="like-aca-cate">학회 분류: ##</div>
-</div>
-<hr width="1241px">
-<div class="likes">
-    학회모집일정
-</div>
+    {% endfor %}
 </div>
 {% endblock %}

@@ -10,7 +10,6 @@ import json
 # Create your views here.
 def main(request):
     posts = Post.objects.all()
-    # posts = Post.objects.filter() # 기한 설정 해야함
     lectures = Lecture.objects.all()
 
     return render(request, 'main.html', {'posts': posts, 'lectures': lectures})
@@ -53,10 +52,10 @@ def logout(request):
 
     return redirect('main')
 
-def mypage(request):
+def mypage(request, user_pk):
+    scraps = Scrap.objects.filter(user = User.objects.get(pk=user_pk))
     
-
-    return render(request, 'mypage.html')
+    return render(request, 'mypage.html', {'scraps': scraps})
 
 
 def category_business(request):
