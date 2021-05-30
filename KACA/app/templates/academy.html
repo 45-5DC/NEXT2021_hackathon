@@ -41,11 +41,11 @@
         <div class='academy_post'></div>
         <div class='academy_post_pic'></div>
     </div>
-        <div class='academy_post_modify'>
-            <div class='academy_post_change'><a href="{% url 'academy_edit' post.pk %}">수정</a></div>
-            <div class='academy_post_delete'><a href="{% url 'academy_delete' post.pk %}">삭제</a></div>
-            <button class="scrap-button" onclick="scrap()">스크랩하기</button>
-        </div>
+    <div class='academy_post_modify'>
+        <div class='academy_post_change'><a href="{% url 'academy_edit' post.pk %}">수정</a></div>
+        <div class='academy_post_delete'><a href="{% url 'academy_delete' post.pk %}">삭제</a></div>
+        <button class="scrap-button" onclick="scrap()">스크랩하기</button>
+    </div>
 
 
     <div class='academy_comment_box'>
@@ -54,11 +54,11 @@
         <div class='comment_box'>
             {% if user.is_authenticated %}
             <div class='form'>
-            <form method="POST">
-                {% csrf_token %}
-                <input class="comment" type="text" name="content" placeholder="댓글을 입력해주세요"></input>
-                <button class="commen_btn" type="submit">댓글 쓰기</button>
-            </form>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input class="comment" type="text" name="content" placeholder="댓글을 입력해주세요"></input>
+                    <button class="commen_btn" type="submit">댓글 쓰기</button>
+                </form>
             </div>
             {% endif %}
         </div>
