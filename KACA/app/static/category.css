@@ -12,20 +12,6 @@
   width: 100%;
 }
 
-<<<<<<< HEAD
-.bar_title{
-    margin-top: 61px;
-    margin-left: 132px;
-    height: 40px;
-}
-
-.academy_contents_box{
-    width: 1441px;  
-    height: 1529px;
-    display: flex;
-    flex-direction: column;
-
-=======
 .bar_title {
   margin-top: 61px;
   margin-left: 132px;
@@ -47,7 +33,6 @@
 .category_selection {
   display: flex;
   flex-direction: row;
->>>>>>> b26177e002af62c4ca53ffc555d549a331663f1d
 }
 
 .academy_list {
