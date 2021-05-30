@@ -9,33 +9,35 @@
   <div class="academy_contents_box">
     <div class="academy_category">
       <div class="category_selection">
-        <form method="POST">
-          <div class="select_bar">
-            <div class="interest_name">관심분야</div>
-            <select class="interest">
-              <option value="business">경영</option>
-              <option value="economics">경제</option>
-              <option value="humanities">인문</option>
-              <option value="law">법</option>
-              <option value="coding">코딩</option>
-              <option value="lifescience">생명과학</option>
-              <option value="environenginner">환경공학</option>
-            </select>
+  </form>
+          <div class="select_bar1">
+                <a href="{% url 'category_business' %}">경영</a>
           </div>
-
-          <div class="select_bar">
-            <div class="select_name">정렬방식</div>
-            <select class="deadline">
-              <option value="business">마감기간순</option>
-              <option value="economics">Like 많은 순</option>
-            </select>
+          <div class="select_bar2">
+                <a href="{% url 'category_economics' %}">경제</a>
           </div>
-        </form>
+          <div class="select_bar3">
+                <a href="{% url 'category_humanities' %}">인문학</a>
+          </div>
+          <div class="select_bar4">
+                <a href="{% url 'category_coding' %}">코딩</a>
+          </div>
+          <div class="select_bar5">
+                <a href="{% url 'category_law' %}">법</a>
+          </div>
+          <div class="select_bar6">
+                <a href="{% url 'category_lifescience' %}">생명과학</a>
+          </div>
+          <div class="select_bar7">
+                <a href="{% url 'category_environengineer' %}">환경공학</a>
+          </div>
+    
       </div>
       <div class="academy_submit">
         <a href="{% url 'academy_form' %}" class="bar">학회등록</a>
       </div>
     </div>
+    <hr width="1200">
     <br />
     <div class="academy_list">
       {% for post in posts %}

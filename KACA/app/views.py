@@ -10,7 +10,6 @@ import json
 # Create your views here.
 def main(request):
     posts = Post.objects.all()
-    # posts = Post.objects.filter() # 기한 설정 해야함
     lectures = Lecture.objects.all()
 
     return render(request, 'main.html', {'posts': posts, 'lectures': lectures})
@@ -53,13 +52,90 @@ def logout(request):
 
     return redirect('main')
 
-def mypage(request):
+def mypage(request, user_pk):
+    scraps = Scrap.objects.filter(user = User.objects.get(pk=user_pk))
     
+    return render(request, 'mypage.html', {'scraps': scraps})
 
-    return render(request, 'mypage.html')
+
+def category_business(request):
+    posts = Post.objects.filter(category="business")
+
+    return render(request, 'category_business.html', {'posts': posts})
+
+def category_coding(request):
+    posts = Post.objects.filter(category="coding")
+
+    return render(request, 'category_coding.html', {'posts': posts})
+
+def category_economics(request):
+    posts = Post.objects.filter(category="economics")
+
+    return render(request, 'category_economics.html', {'posts': posts})
+
+def category_environengineer(request):
+    posts = Post.objects.filter(category="environenginner")
+
+    return render(request, 'category_environengineer.html', {'posts': posts})
+
+def category_humanities(request):
+    posts = Post.objects.filter(category="humanities")
+
+    return render(request, 'category_humanities.html', {'posts': posts})
+
+def category_law(request):
+    posts = Post.objects.filter(category="law")
+
+    return render(request, 'category_law.html', {'posts': posts})
+
+def category_lifescience(request):
+    posts = Post.objects.filter(category="lifescience")
+
+    return render(request, 'category_lifescience.html', {'posts': posts})
+
+
+
+def lecture_business(request):
+    lectures = Lecture.objects.filter(category="business")
+
+    return render(request, 'lecture_business.html', {'lectures': lectures})
+
+def lecture_coding(request):
+    lectures = Lecture.objects.filter(category="coding")
+
+    return render(request, 'lecture_coding.html',{'lectures': lectures})
+
+def lecture_economics(request):
+    lectures = Lecture.objects.filter(category="economics")
+
+    return render(request, 'lecture_economics.html', {'lectures': lectures})
+
+def lecture_environengineer(request):
+    lectures = Lecture.objects.filter(category="environenginner")
+
+    return render(request, 'lecture_environengineer.html',{'lectures': lectures})
+
+def lecture_humanities(request):
+    lectures = Lecture.objects.filter(category="humanities")
+
+    return render(request, 'lecture_humanities.html', {'lectures': lectures})
+
+def lecture_law(request):
+    lectures = Lecture.objects.filter(category="law")
+
+    return render(request, 'lecture_law.html', {'lectures': lectures})
+
+def lecture_lifescience(request):
+    lectures = Lecture.objects.filter(category="lifescience")
+
+    return render(request, 'lecture_lifescience.html', {'lectures': lectures})
+
+
+
 
 def category(request):
     posts = Post.objects.all()
+
     return render(request, 'category.html', {'posts': posts})
 
 def academy(request, post_pk):
