@@ -57,8 +57,48 @@ def mypage(request, user_pk):
     
     return render(request, 'mypage.html', {'scraps': scraps})
 
+
+def category_business(request):
+    posts = Post.objects.filter(category="business")
+
+    return render(request, 'category_business.html', {'posts': posts})
+
+def category_coding(request):
+    posts = Post.objects.filter(category="coding")
+
+    return render(request, 'category_coding.html', {'posts': posts})
+
+def category_economics(request):
+    posts = Post.objects.filter(category="economics")
+
+    return render(request, 'category_economics.html', {'posts': posts})
+
+def category_environengineer(request):
+    posts = Post.objects.filter(category="environenginner")
+
+    return render(request, 'category_environengineer.html', {'posts': posts})
+
+def category_humanities(request):
+    posts = Post.objects.filter(category="humanities")
+
+    return render(request, 'category_humanities.html', {'posts': posts})
+
+def category_law(request):
+    posts = Post.objects.filter(category="law")
+
+    return render(request, 'category_law.html', {'posts': posts})
+
+def category_lifescience(request):
+    posts = Post.objects.filter(category="lifescience")
+
+    return render(request, 'category_lifescience.html', {'posts': posts})
+
+
+
+
 def category(request):
     posts = Post.objects.all()
+
     return render(request, 'category.html', {'posts': posts})
 
 def academy(request, post_pk):
